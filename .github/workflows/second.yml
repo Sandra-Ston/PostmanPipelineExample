@@ -1,4 +1,4 @@
-name: Newman Test Run CI
+name: Second Newman Test Run CI
 
 on:
   push:
