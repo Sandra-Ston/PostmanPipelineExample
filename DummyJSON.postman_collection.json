@@ -1,0 +1,2611 @@
+{
+	"info": {
+		"_postman_id": "4863caf3-122c-44e3-a089-4955185532f4",
+		"name": "DummyJSON",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41112391"
+	},
+	"item": [
+		{
+			"name": "Images",
+			"item": [
+				{
+					"name": "Generate_square_image",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/image/150",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"image",
+								"150"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate_image_with_custom_text",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/image/400x200/008080/ffffff?text=Hello+Peter",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"image",
+								"400x200",
+								"008080",
+								"ffffff"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "Hello+Peter"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate image with different formats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/image/400x200?type=webp&text=I+am+a+webp+image",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"image",
+								"400x200"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "webp"
+								},
+								{
+									"key": "text",
+									"value": "I+am+a+webp+image"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate image with custom colors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/image/400x200/282828",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"image",
+								"400x200",
+								"282828"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate image with custom font family",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/image/400x200/282828?fontFamily=pacifico&text=I+am+a+pacifico+font",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"image",
+								"400x200",
+								"282828"
+							],
+							"query": [
+								{
+									"key": "fontFamily",
+									"value": "pacifico"
+								},
+								{
+									"key": "text",
+									"value": "I+am+a+pacifico+font"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate image with custom font size",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/image/400x200/008080/ffffff?text=Hello+Peter!&fontSize=16",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"image",
+								"400x200",
+								"008080",
+								"ffffff"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "Hello+Peter!"
+								},
+								{
+									"key": "fontSize",
+									"value": "16"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate identicon",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/icon/abc123/150",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"icon",
+								"abc123",
+								"150"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate_custom_size_image",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/image/200x100",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"image",
+								"200x100"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login user and get tokens",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"//Global\r",
+									"//console.log(pm.globals.get('globalus_kintamasis'));\r",
+									"//pm.globals.set('kintamojo_pavadinimas', 'kintamojo_reiksme');\r",
+									"//jei yra zodis get, visada bus set\r",
+									"\r",
+									"\r",
+									"//Enviroment\r",
+									"//console.log(pm.environment.get(\"AccessToken\"));\r",
+									"\r",
+									"\r",
+									"//Collection\r",
+									"//console.log(pm.collectionVariables.get('kolekcijos_kintamasis'));\r",
+									"//pm.collectionVariables.set('script_kolekcija', 'test')\r",
+									"\r",
+									"//Local variable - kintamasis, kuris yra request scripte. Egzistuoja tik tol kol pasibaigia request.\r",
+									"\r",
+									"//pm.variables.set('lokalus_kintamasis', 'laikinas');\r",
+									"//console.log(pm.variables.get('lokalus_kintamasis'));\r",
+									"\r",
+									"\r",
+									"//let jsonAtsakymas = pm.response.json();\r",
+									"\r",
+									"//pm.environment.set(\"AccessToken\", jsonAtsakymas.accessToken);\r",
+									"\r",
+									"//pm.environment.set(\"RefreshToken\", jsonAtsakymas.refreshToken);\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"AccessToken is not empty\", function () {\r",
+									"    let jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.accessToken).to.not.be.empty;\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"//pm.variables.set('expiresInMins', '40');\r",
+									"//pm.variables.set('username', 'emilys');\r",
+									"//pm.variables.set('password', 'emilyspass');"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"username\": \"emilys\",\r\n    \"password\": \"emilyspass\",\r\n    \"expiresInMins\": 30 // optional, defaults to 60\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}auth/login",
+							"host": [
+								"{{base_url}}auth"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login user Auto",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"//Global\r",
+									"//console.log(pm.globals.get('globalus_kintamasis'));\r",
+									"//pm.globals.set('kintamojo_pavadinimas', 'kintamojo_reiksme');\r",
+									"//jei yra zodis get, visada bus set\r",
+									"\r",
+									"\r",
+									"//Enviroment\r",
+									"//console.log(pm.environment.get(\"AccessToken\"));\r",
+									"\r",
+									"\r",
+									"//Collection\r",
+									"//console.log(pm.collectionVariables.get('kolekcijos_kintamasis'));\r",
+									"//pm.collectionVariables.set('script_kolekcija', 'test')\r",
+									"\r",
+									"//Local variable - kintamasis, kuris yra request scripte. Egzistuoja tik tol kol pasibaigia request.\r",
+									"\r",
+									"//pm.variables.set('lokalus_kintamasis', 'laikinas');\r",
+									"//console.log(pm.variables.get('lokalus_kintamasis'));\r",
+									"\r",
+									"\r",
+									"//let jsonAtsakymas = pm.response.json();\r",
+									"\r",
+									"//pm.environment.set(\"AccessToken\", jsonAtsakymas.accessToken);\r",
+									"\r",
+									"//pm.environment.set(\"RefreshToken\", jsonAtsakymas.refreshToken);\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"AccessToken is not empty\", function () {\r",
+									"    let jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.accessToken).to.not.be.empty;\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"//pm.variables.set('expiresInMins', '40');\r",
+									"//pm.variables.set('username', 'emilys');\r",
+									"//pm.variables.set('password', 'emilyspass');"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"{{username}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"expiresInMins\": 30 // optional, defaults to 60\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}auth/login",
+							"host": [
+								"{{base_url}}auth"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get current auth user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{AccessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}auth/me",
+							"host": [
+								"{{base_url}}auth"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh auth session",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJlbWlseXMiLCJlbWFpbCI6ImVtaWx5LmpvaG5zb25AeC5kdW1teWpzb24uY29tIiwiZmlyc3ROYW1lIjoiRW1pbHkiLCJsYXN0TmFtZSI6IkpvaG5zb24iLCJnZW5kZXIiOiJmZW1hbGUiLCJpbWFnZSI6Imh0dHBzOi8vZHVtbXlqc29uLmNvbS9pY29uL2VtaWx5cy8xMjgiLCJpYXQiOjE3Mzc2MTcwMjMsImV4cCI6MTc0MDIwOTAyM30.PFHFqdVhSJN3WUmN-rf5fzZ07bEFIgtSNYefByp19yg\", // Optional, if not provided, the server will use the cookie\r\n    \"expiresInMins\": 30 // optional (FOR ACCESS TOKEN), defaults to 60 \r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dummyjson.com/auth/refresh",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get all products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/products?limit=0",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a single product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/products/1",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/products/search?q=phone",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"products",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "phone"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Limit and skip products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/products?limit=10&skip=10&select=title,price",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "skip",
+									"value": "10"
+								},
+								{
+									"key": "select",
+									"value": "title,price"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sort products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/products?sortBy=title&order=asc",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "title"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all products categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/products/categories",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"products",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get products category list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/products/category-list?limit=0",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"products",
+								"category-list"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get products category list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://dummyjson.com/products/category-list?limit=0",
+									"protocol": "https",
+									"host": [
+										"dummyjson",
+										"com"
+									],
+									"path": [
+										"products",
+										"category-list"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Report-To",
+									"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1738258581&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&s=SGn50mD0VGpscztwDAyYZtYj17eqr8icm4oaNPtnX4A%3D\"}]}"
+								},
+								{
+									"key": "Reporting-Endpoints",
+									"value": "heroku-nel=https://nel.heroku.com/reports?ts=1738258581&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&s=SGn50mD0VGpscztwDAyYZtYj17eqr8icm4oaNPtnX4A%3D"
+								},
+								{
+									"key": "Nel",
+									"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Dns-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Cats on Keyboards"
+								},
+								{
+									"key": "Server",
+									"value": "BobTheBuilder"
+								},
+								{
+									"key": "X-Ratelimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-Ratelimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Jan 2025 17:36:21 GMT"
+								},
+								{
+									"key": "X-Ratelimit-Reset",
+									"value": "1738258591"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "342"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"156-8GSmapwnkZIOOiVZRKE52oLajsg\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"beauty\",\n    \"fragrances\",\n    \"furniture\",\n    \"groceries\",\n    \"home-decoration\",\n    \"kitchen-accessories\",\n    \"laptops\",\n    \"mens-shirts\",\n    \"mens-shoes\",\n    \"mens-watches\",\n    \"mobile-accessories\",\n    \"motorcycle\",\n    \"skin-care\",\n    \"smartphones\",\n    \"sports-accessories\",\n    \"sunglasses\",\n    \"tablets\",\n    \"tops\",\n    \"vehicle\",\n    \"womens-bags\",\n    \"womens-dresses\",\n    \"womens-jewellery\",\n    \"womens-shoes\",\n    \"womens-watches\"\n]"
+						}
+					]
+				},
+				{
+					"name": "Get products by a category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/products/category/smartphones",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"products",
+								"category",
+								"smartphones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Auto Get products by a category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Statusas yra 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Produktų kiekis yra didesnis nei 0\", function () {\r",
+									"    let jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.products.length).to.be.above(0);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/products/category/{{Category}}",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"products",
+								"category",
+								"{{Category}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a new product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"title\": \"BMW Pencil\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dummyjson.com/products/add",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"products",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"iPhone Galaxy +1\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dummyjson.com/products/1",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/products/1",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carts",
+			"item": [
+				{
+					"name": "Get all carts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/carts",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a single cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/carts/1",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"carts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get carts by a user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/carts/user/6",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"carts",
+								"user",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a new cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 1,\r\n    \"products\": [\r\n      {\r\n        \"id\": 144,\r\n        \"quantity\": 4\r\n      },\r\n      {\r\n        \"id\": 98,\r\n        \"quantity\": 1\r\n      }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dummyjson.com/carts/add",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"carts",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a cart",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"merge\": true,\r\n    \"products\": [\r\n      {\r\n       \"id\": 1,\r\n        \"quantity\": 1\r\n      }\r\n    ]\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dummyjson.com/carts/1",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"carts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a cart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/carts/1",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"carts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recipes",
+			"item": [
+				{
+					"name": "Get all recipes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/recipes",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"recipes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a single recipe",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/recipes/1",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"recipes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search recipes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/recipes/search?q=Margherita",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"recipes",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "Margherita"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Limit and skip recipes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/recipes?limit=10&skip=10&select=name,image",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"recipes"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "skip",
+									"value": "10"
+								},
+								{
+									"key": "select",
+									"value": "name,image"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sort recipes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/recipes?sortBy=name&order=asc",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"recipes"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "name"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all recipes tags",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/recipes/tags",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"recipes",
+								"tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get recipes by a tag",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/recipes/tag/Pakistani",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"recipes",
+								"tag",
+								"Pakistani"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get recipes by a meal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/recipes/meal-type/snack",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"recipes",
+								"meal-type",
+								"snack"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/users?limit=0&select=username,password",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "0"
+								},
+								{
+									"key": "select",
+									"value": "username,password"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://dummyjson.com/users?limit=0&select=username,password",
+									"protocol": "https",
+									"host": [
+										"dummyjson",
+										"com"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "0"
+										},
+										{
+											"key": "select",
+											"value": "username,password"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Report-To",
+									"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1738217526&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&s=9mL%2FiBssrPoIs6DqwrelYn5ipRtBWdNCBqRo%2B9obrBY%3D\"}]}"
+								},
+								{
+									"key": "Reporting-Endpoints",
+									"value": "heroku-nel=https://nel.heroku.com/reports?ts=1738217526&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&s=9mL%2FiBssrPoIs6DqwrelYn5ipRtBWdNCBqRo%2B9obrBY%3D"
+								},
+								{
+									"key": "Nel",
+									"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Dns-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Cats on Keyboards"
+								},
+								{
+									"key": "Server",
+									"value": "BobTheBuilder"
+								},
+								{
+									"key": "X-Ratelimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-Ratelimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Jan 2025 06:12:06 GMT"
+								},
+								{
+									"key": "X-Ratelimit-Reset",
+									"value": "1738217535"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"2d76-jdjwSeiXkRNluRra868LV8YLEas\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"users\": [\n        {\n            \"id\": 1,\n            \"username\": \"emilys\",\n            \"password\": \"emilyspass\"\n        },\n        {\n            \"id\": 2,\n            \"username\": \"michaelw\",\n            \"password\": \"michaelwpass\"\n        },\n        {\n            \"id\": 3,\n            \"username\": \"sophiab\",\n            \"password\": \"sophiabpass\"\n        },\n        {\n            \"id\": 4,\n            \"username\": \"jamesd\",\n            \"password\": \"jamesdpass\"\n        },\n        {\n            \"id\": 5,\n            \"username\": \"emmaj\",\n            \"password\": \"emmajpass\"\n        },\n        {\n            \"id\": 6,\n            \"username\": \"oliviaw\",\n            \"password\": \"oliviawpass\"\n        },\n        {\n            \"id\": 7,\n            \"username\": \"alexanderj\",\n            \"password\": \"alexanderjpass\"\n        },\n        {\n            \"id\": 8,\n            \"username\": \"avat\",\n            \"password\": \"avatpass\"\n        },\n        {\n            \"id\": 9,\n            \"username\": \"ethanm\",\n            \"password\": \"ethanmpass\"\n        },\n        {\n            \"id\": 10,\n            \"username\": \"isabellad\",\n            \"password\": \"isabelladpass\"\n        },\n        {\n            \"id\": 11,\n            \"username\": \"liamg\",\n            \"password\": \"liamgpass\"\n        },\n        {\n            \"id\": 12,\n            \"username\": \"miar\",\n            \"password\": \"miarpass\"\n        },\n        {\n            \"id\": 13,\n            \"username\": \"noahh\",\n            \"password\": \"noahhpass\"\n        },\n        {\n            \"id\": 14,\n            \"username\": \"charlottem\",\n            \"password\": \"charlottempass\"\n        },\n        {\n            \"id\": 15,\n            \"username\": \"williamg\",\n            \"password\": \"williamgpass\"\n        },\n        {\n            \"id\": 16,\n            \"username\": \"averyp\",\n            \"password\": \"averyppass\"\n        },\n        {\n            \"id\": 17,\n            \"username\": \"evelyns\",\n            \"password\": \"evelynspass\"\n        },\n        {\n            \"id\": 18,\n            \"username\": \"logant\",\n            \"password\": \"logantpass\"\n        },\n        {\n            \"id\": 19,\n            \"username\": \"abigailr\",\n            \"password\": \"abigailrpass\"\n        },\n        {\n            \"id\": 20,\n            \"username\": \"jacksone\",\n            \"password\": \"jacksonepass\"\n        },\n        {\n            \"id\": 21,\n            \"username\": \"madisonc\",\n            \"password\": \"madisoncpass\"\n        },\n        {\n            \"id\": 22,\n            \"username\": \"elijahs\",\n            \"password\": \"elijahspass\"\n        },\n        {\n            \"id\": 23,\n            \"username\": \"chloem\",\n            \"password\": \"chloempass\"\n        },\n        {\n            \"id\": 24,\n            \"username\": \"mateon\",\n            \"password\": \"mateonpass\"\n        },\n        {\n            \"id\": 25,\n            \"username\": \"harpere\",\n            \"password\": \"harperepass\"\n        },\n        {\n            \"id\": 26,\n            \"username\": \"evelyng\",\n            \"password\": \"evelyngpass\"\n        },\n        {\n            \"id\": 27,\n            \"username\": \"danielc\",\n            \"password\": \"danielcpass\"\n        },\n        {\n            \"id\": 28,\n            \"username\": \"lilyb\",\n            \"password\": \"lilybpass\"\n        },\n        {\n            \"id\": 29,\n            \"username\": \"henryh\",\n            \"password\": \"henryhpass\"\n        },\n        {\n            \"id\": 30,\n            \"username\": \"addisonw\",\n            \"password\": \"addisonwpass\"\n        },\n        {\n            \"id\": 31,\n            \"username\": \"gabriela\",\n            \"password\": \"gabrielapass\"\n        },\n        {\n            \"id\": 32,\n            \"username\": \"natalieh\",\n            \"password\": \"nataliehpass\"\n        },\n        {\n            \"id\": 33,\n            \"username\": \"carterb\",\n            \"password\": \"carterbpass\"\n        },\n        {\n            \"id\": 34,\n            \"username\": \"sofiam\",\n            \"password\": \"sofiampass\"\n        },\n        {\n            \"id\": 35,\n            \"username\": \"jackw\",\n            \"password\": \"jackwpass\"\n        },\n        {\n            \"id\": 36,\n            \"username\": \"harpert\",\n            \"password\": \"harpertpass\"\n        },\n        {\n            \"id\": 37,\n            \"username\": \"masonp\",\n            \"password\": \"masonppass\"\n        },\n        {\n            \"id\": 38,\n            \"username\": \"ariar\",\n            \"password\": \"ariarpass\"\n        },\n        {\n            \"id\": 39,\n            \"username\": \"lucasg\",\n            \"password\": \"lucasgpass\"\n        },\n        {\n            \"id\": 40,\n            \"username\": \"ellaa\",\n            \"password\": \"ellaapass\"\n        },\n        {\n            \"id\": 41,\n            \"username\": \"evanr\",\n            \"password\": \"evanrpass\"\n        },\n        {\n            \"id\": 42,\n            \"username\": \"averyc\",\n            \"password\": \"averycpass\"\n        },\n        {\n            \"id\": 43,\n            \"username\": \"benjaminf\",\n            \"password\": \"benjaminfpass\"\n        },\n        {\n            \"id\": 44,\n            \"username\": \"scarlettw\",\n            \"password\": \"scarlettwpass\"\n        },\n        {\n            \"id\": 45,\n            \"username\": \"lincolnk\",\n            \"password\": \"lincolnkpass\"\n        },\n        {\n            \"id\": 46,\n            \"username\": \"hannahr\",\n            \"password\": \"hannahrpass\"\n        },\n        {\n            \"id\": 47,\n            \"username\": \"nicholasb\",\n            \"password\": \"nicholasbpass\"\n        },\n        {\n            \"id\": 48,\n            \"username\": \"lunar\",\n            \"password\": \"lunarpass\"\n        },\n        {\n            \"id\": 49,\n            \"username\": \"jacobc\",\n            \"password\": \"jacobcpass\"\n        },\n        {\n            \"id\": 50,\n            \"username\": \"stellah\",\n            \"password\": \"stellahpass\"\n        },\n        {\n            \"id\": 51,\n            \"username\": \"elib\",\n            \"password\": \"elibpass\"\n        },\n        {\n            \"id\": 52,\n            \"username\": \"gracep\",\n            \"password\": \"graceppass\"\n        },\n        {\n            \"id\": 53,\n            \"username\": \"lucasgx\",\n            \"password\": \"lucasgxpass\"\n        },\n        {\n            \"id\": 54,\n            \"username\": \"avah\",\n            \"password\": \"avahpass\"\n        },\n        {\n            \"id\": 55,\n            \"username\": \"owenf\",\n            \"password\": \"owenfpass\"\n        },\n        {\n            \"id\": 56,\n            \"username\": \"samanthah\",\n            \"password\": \"samanthahpass\"\n        },\n        {\n            \"id\": 57,\n            \"username\": \"nathand\",\n            \"password\": \"nathandpass\"\n        },\n        {\n            \"id\": 58,\n            \"username\": \"bellag\",\n            \"password\": \"bellagpass\"\n        },\n        {\n            \"id\": 59,\n            \"username\": \"ethanf\",\n            \"password\": \"ethanfpass\"\n        },\n        {\n            \"id\": 60,\n            \"username\": \"lillians\",\n            \"password\": \"lillianspass\"\n        },\n        {\n            \"id\": 61,\n            \"username\": \"masonpx\",\n            \"password\": \"masonpxpass\"\n        },\n        {\n            \"id\": 62,\n            \"username\": \"leahh\",\n            \"password\": \"leahhpass\"\n        },\n        {\n            \"id\": 63,\n            \"username\": \"loganl\",\n            \"password\": \"loganlpass\"\n        },\n        {\n            \"id\": 64,\n            \"username\": \"averyb\",\n            \"password\": \"averybpass\"\n        },\n        {\n            \"id\": 65,\n            \"username\": \"calebp\",\n            \"password\": \"calebppass\"\n        },\n        {\n            \"id\": 66,\n            \"username\": \"ariaf\",\n            \"password\": \"ariafpass\"\n        },\n        {\n            \"id\": 67,\n            \"username\": \"gabrielh\",\n            \"password\": \"gabrielhpass\"\n        },\n        {\n            \"id\": 68,\n            \"username\": \"laylas\",\n            \"password\": \"laylaspass\"\n        },\n        {\n            \"id\": 69,\n            \"username\": \"christopherw\",\n            \"password\": \"christopherwpass\"\n        },\n        {\n            \"id\": 70,\n            \"username\": \"zoen\",\n            \"password\": \"zoenpass\"\n        },\n        {\n            \"id\": 71,\n            \"username\": \"nolanb\",\n            \"password\": \"nolanbpass\"\n        },\n        {\n            \"id\": 72,\n            \"username\": \"victoriam\",\n            \"password\": \"victoriampass\"\n        },\n        {\n            \"id\": 73,\n            \"username\": \"maxr\",\n            \"password\": \"maxrpass\"\n        },\n        {\n            \"id\": 74,\n            \"username\": \"penelopeh\",\n            \"password\": \"penelopehpass\"\n        },\n        {\n            \"id\": 75,\n            \"username\": \"ryang\",\n            \"password\": \"ryangpass\"\n        },\n        {\n            \"id\": 76,\n            \"username\": \"madelines\",\n            \"password\": \"madelinespass\"\n        },\n        {\n            \"id\": 77,\n            \"username\": \"jonathanp\",\n            \"password\": \"jonathanppass\"\n        },\n        {\n            \"id\": 78,\n            \"username\": \"eleanort\",\n            \"password\": \"eleanortpass\"\n        },\n        {\n            \"id\": 79,\n            \"username\": \"isaacl\",\n            \"password\": \"isaaclpass\"\n        },\n        {\n            \"id\": 80,\n            \"username\": \"hazelg\",\n            \"password\": \"hazelgpass\"\n        },\n        {\n            \"id\": 81,\n            \"username\": \"austinh\",\n            \"password\": \"austinhpass\"\n        },\n        {\n            \"id\": 82,\n            \"username\": \"lillianb\",\n            \"password\": \"lillianbpass\"\n        },\n        {\n            \"id\": 83,\n            \"username\": \"dylanw\",\n            \"password\": \"dylanwpass\"\n        },\n        {\n            \"id\": 84,\n            \"username\": \"aaliyahh\",\n            \"password\": \"aaliyahhpass\"\n        },\n        {\n            \"id\": 85,\n            \"username\": \"cameronb\",\n            \"password\": \"cameronbpass\"\n        },\n        {\n            \"id\": 86,\n            \"username\": \"noram\",\n            \"password\": \"norampass\"\n        },\n        {\n            \"id\": 87,\n            \"username\": \"hunterg\",\n            \"password\": \"huntergpass\"\n        },\n        {\n            \"id\": 88,\n            \"username\": \"aubreyw\",\n            \"password\": \"aubreywpass\"\n        },\n        {\n            \"id\": 89,\n            \"username\": \"braydenf\",\n            \"password\": \"braydenfpass\"\n        },\n        {\n            \"id\": 90,\n            \"username\": \"scarlettb\",\n            \"password\": \"scarlettbpass\"\n        },\n        {\n            \"id\": 91,\n            \"username\": \"levih\",\n            \"password\": \"levihpass\"\n        },\n        {\n            \"id\": 92,\n            \"username\": \"autumng\",\n            \"password\": \"autumngpass\"\n        },\n        {\n            \"id\": 93,\n            \"username\": \"juliann\",\n            \"password\": \"juliannpass\"\n        },\n        {\n            \"id\": 94,\n            \"username\": \"rubya\",\n            \"password\": \"rubyapass\"\n        },\n        {\n            \"id\": 95,\n            \"username\": \"miless\",\n            \"password\": \"milesspass\"\n        },\n        {\n            \"id\": 96,\n            \"username\": \"auroral\",\n            \"password\": \"auroralpass\"\n        },\n        {\n            \"id\": 97,\n            \"username\": \"oscarp\",\n            \"password\": \"oscarppass\"\n        },\n        {\n            \"id\": 98,\n            \"username\": \"clarab\",\n            \"password\": \"clarabpass\"\n        },\n        {\n            \"id\": 99,\n            \"username\": \"gavins\",\n            \"password\": \"gavinspass\"\n        },\n        {\n            \"id\": 100,\n            \"username\": \"lilah\",\n            \"password\": \"lilahpass\"\n        },\n        {\n            \"id\": 101,\n            \"username\": \"alicej\",\n            \"password\": \"alicejpass\"\n        },\n        {\n            \"id\": 102,\n            \"username\": \"johnd\",\n            \"password\": \"johndpass\"\n        },\n        {\n            \"id\": 103,\n            \"username\": \"emilyt\",\n            \"password\": \"emilytpass\"\n        },\n        {\n            \"id\": 104,\n            \"username\": \"michaelj\",\n            \"password\": \"michaeljpass\"\n        },\n        {\n            \"id\": 105,\n            \"username\": \"emmac\",\n            \"password\": \"emmacpass\"\n        },\n        {\n            \"id\": 106,\n            \"username\": \"davidm\",\n            \"password\": \"davidmpass\"\n        },\n        {\n            \"id\": 107,\n            \"username\": \"oliviah\",\n            \"password\": \"oliviahpass\"\n        },\n        {\n            \"id\": 108,\n            \"username\": \"jamesg\",\n            \"password\": \"jamesgpass\"\n        },\n        {\n            \"id\": 109,\n            \"username\": \"sophiam\",\n            \"password\": \"sophiampass\"\n        },\n        {\n            \"id\": 110,\n            \"username\": \"danielt\",\n            \"password\": \"danieltpass\"\n        },\n        {\n            \"id\": 111,\n            \"username\": \"isabellaw\",\n            \"password\": \"isabellawpass\"\n        },\n        {\n            \"id\": 112,\n            \"username\": \"alexanderh\",\n            \"password\": \"alexanderhpass\"\n        },\n        {\n            \"id\": 113,\n            \"username\": \"miam\",\n            \"password\": \"miampass\"\n        },\n        {\n            \"id\": 114,\n            \"username\": \"ethant\",\n            \"password\": \"ethantpass\"\n        },\n        {\n            \"id\": 115,\n            \"username\": \"charlotteb\",\n            \"password\": \"charlottebpass\"\n        },\n        {\n            \"id\": 116,\n            \"username\": \"williaml\",\n            \"password\": \"williamlpass\"\n        },\n        {\n            \"id\": 117,\n            \"username\": \"ameliag\",\n            \"password\": \"ameliagpass\"\n        },\n        {\n            \"id\": 118,\n            \"username\": \"benjaminw\",\n            \"password\": \"benjaminwpass\"\n        },\n        {\n            \"id\": 119,\n            \"username\": \"liamr\",\n            \"password\": \"liamrpass\"\n        },\n        {\n            \"id\": 120,\n            \"username\": \"evelynf\",\n            \"password\": \"evelynfpass\"\n        },\n        {\n            \"id\": 121,\n            \"username\": \"avahx\",\n            \"password\": \"avahxpass\"\n        },\n        {\n            \"id\": 122,\n            \"username\": \"liamt\",\n            \"password\": \"liamtpass\"\n        },\n        {\n            \"id\": 123,\n            \"username\": \"harperb\",\n            \"password\": \"harperbpass\"\n        },\n        {\n            \"id\": 124,\n            \"username\": \"noahl\",\n            \"password\": \"noahlpass\"\n        },\n        {\n            \"id\": 125,\n            \"username\": \"loganlx\",\n            \"password\": \"loganlxpass\"\n        },\n        {\n            \"id\": 126,\n            \"username\": \"averya\",\n            \"password\": \"averyapass\"\n        },\n        {\n            \"id\": 127,\n            \"username\": \"masonw\",\n            \"password\": \"masonwpass\"\n        },\n        {\n            \"id\": 128,\n            \"username\": \"gracee\",\n            \"password\": \"graceepass\"\n        },\n        {\n            \"id\": 129,\n            \"username\": \"lucasa\",\n            \"password\": \"lucasapass\"\n        },\n        {\n            \"id\": 130,\n            \"username\": \"chloep\",\n            \"password\": \"chloeppass\"\n        },\n        {\n            \"id\": 131,\n            \"username\": \"jacksonm\",\n            \"password\": \"jacksonmpass\"\n        },\n        {\n            \"id\": 132,\n            \"username\": \"zoec\",\n            \"password\": \"zoecpass\"\n        },\n        {\n            \"id\": 133,\n            \"username\": \"carterr\",\n            \"password\": \"carterrpass\"\n        },\n        {\n            \"id\": 134,\n            \"username\": \"noramx\",\n            \"password\": \"noramxpass\"\n        },\n        {\n            \"id\": 135,\n            \"username\": \"elijahc\",\n            \"password\": \"elijahcpass\"\n        },\n        {\n            \"id\": 136,\n            \"username\": \"madisonk\",\n            \"password\": \"madisonkpass\"\n        },\n        {\n            \"id\": 137,\n            \"username\": \"gabrielb\",\n            \"password\": \"gabrielbpass\"\n        },\n        {\n            \"id\": 138,\n            \"username\": \"lilyl\",\n            \"password\": \"lilylpass\"\n        },\n        {\n            \"id\": 139,\n            \"username\": \"elijahh\",\n            \"password\": \"elijahhpass\"\n        },\n        {\n            \"id\": 140,\n            \"username\": \"hannahg\",\n            \"password\": \"hannahgpass\"\n        },\n        {\n            \"id\": 141,\n            \"username\": \"owens\",\n            \"password\": \"owenspass\"\n        },\n        {\n            \"id\": 142,\n            \"username\": \"ariam\",\n            \"password\": \"ariampass\"\n        },\n        {\n            \"id\": 143,\n            \"username\": \"graysonc\",\n            \"password\": \"graysoncpass\"\n        },\n        {\n            \"id\": 144,\n            \"username\": \"ellar\",\n            \"password\": \"ellarpass\"\n        },\n        {\n            \"id\": 145,\n            \"username\": \"lukec\",\n            \"password\": \"lukecpass\"\n        },\n        {\n            \"id\": 146,\n            \"username\": \"leahp\",\n            \"password\": \"leahppass\"\n        },\n        {\n            \"id\": 147,\n            \"username\": \"henryt\",\n            \"password\": \"henrytpass\"\n        },\n        {\n            \"id\": 148,\n            \"username\": \"aurorag\",\n            \"password\": \"auroragpass\"\n        },\n        {\n            \"id\": 149,\n            \"username\": \"wyattp\",\n            \"password\": \"wyattppass\"\n        },\n        {\n            \"id\": 150,\n            \"username\": \"stellas\",\n            \"password\": \"stellaspass\"\n        },\n        {\n            \"id\": 151,\n            \"username\": \"nathanr\",\n            \"password\": \"nathanrpass\"\n        },\n        {\n            \"id\": 152,\n            \"username\": \"paisleyf\",\n            \"password\": \"paisleyfpass\"\n        },\n        {\n            \"id\": 153,\n            \"username\": \"christianp\",\n            \"password\": \"christianppass\"\n        },\n        {\n            \"id\": 154,\n            \"username\": \"bellaa\",\n            \"password\": \"bellaapass\"\n        },\n        {\n            \"id\": 155,\n            \"username\": \"nicholase\",\n            \"password\": \"nicholasepass\"\n        },\n        {\n            \"id\": 156,\n            \"username\": \"milam\",\n            \"password\": \"milampass\"\n        },\n        {\n            \"id\": 157,\n            \"username\": \"aaronc\",\n            \"password\": \"aaroncpass\"\n        },\n        {\n            \"id\": 158,\n            \"username\": \"aubreyb\",\n            \"password\": \"aubreybpass\"\n        },\n        {\n            \"id\": 159,\n            \"username\": \"eliw\",\n            \"password\": \"eliwpass\"\n        },\n        {\n            \"id\": 160,\n            \"username\": \"claires\",\n            \"password\": \"clairespass\"\n        },\n        {\n            \"id\": 161,\n            \"username\": \"jamesgx\",\n            \"password\": \"jamesgxpass\"\n        },\n        {\n            \"id\": 162,\n            \"username\": \"mateob\",\n            \"password\": \"mateobpass\"\n        },\n        {\n            \"id\": 163,\n            \"username\": \"julianj\",\n            \"password\": \"julianjpass\"\n        },\n        {\n            \"id\": 164,\n            \"username\": \"addisonf\",\n            \"password\": \"addisonfpass\"\n        },\n        {\n            \"id\": 165,\n            \"username\": \"leor\",\n            \"password\": \"leorpass\"\n        },\n        {\n            \"id\": 166,\n            \"username\": \"elenam\",\n            \"password\": \"elenampass\"\n        },\n        {\n            \"id\": 167,\n            \"username\": \"evanw\",\n            \"password\": \"evanwpass\"\n        },\n        {\n            \"id\": 168,\n            \"username\": \"lunah\",\n            \"password\": \"lunahpass\"\n        },\n        {\n            \"id\": 169,\n            \"username\": \"jaxonb\",\n            \"password\": \"jaxonbpass\"\n        },\n        {\n            \"id\": 170,\n            \"username\": \"penelopet\",\n            \"password\": \"penelopetpass\"\n        },\n        {\n            \"id\": 171,\n            \"username\": \"connorb\",\n            \"password\": \"connorbpass\"\n        },\n        {\n            \"id\": 172,\n            \"username\": \"arianaw\",\n            \"password\": \"arianawpass\"\n        },\n        {\n            \"id\": 173,\n            \"username\": \"ashers\",\n            \"password\": \"asherspass\"\n        },\n        {\n            \"id\": 174,\n            \"username\": \"sadiep\",\n            \"password\": \"sadieppass\"\n        },\n        {\n            \"id\": 175,\n            \"username\": \"gabrielm\",\n            \"password\": \"gabrielmpass\"\n        },\n        {\n            \"id\": 176,\n            \"username\": \"aaliyaha\",\n            \"password\": \"aaliyahapass\"\n        },\n        {\n            \"id\": 177,\n            \"username\": \"xavierw\",\n            \"password\": \"xavierwpass\"\n        },\n        {\n            \"id\": 178,\n            \"username\": \"savannahe\",\n            \"password\": \"savannahepass\"\n        },\n        {\n            \"id\": 179,\n            \"username\": \"tylerd\",\n            \"password\": \"tylerdpass\"\n        },\n        {\n            \"id\": 180,\n            \"username\": \"auroran\",\n            \"password\": \"auroranpass\"\n        },\n        {\n            \"id\": 181,\n            \"username\": \"brandonc\",\n            \"password\": \"brandoncpass\"\n        },\n        {\n            \"id\": 182,\n            \"username\": \"ellieh\",\n            \"password\": \"elliehpass\"\n        },\n        {\n            \"id\": 183,\n            \"username\": \"cameronp\",\n            \"password\": \"cameronppass\"\n        },\n        {\n            \"id\": 184,\n            \"username\": \"nataliehx\",\n            \"password\": \"nataliehxpass\"\n        },\n        {\n            \"id\": 185,\n            \"username\": \"henrya\",\n            \"password\": \"henryapass\"\n        },\n        {\n            \"id\": 186,\n            \"username\": \"harperbx\",\n            \"password\": \"harperbxpass\"\n        },\n        {\n            \"id\": 187,\n            \"username\": \"zacharyl\",\n            \"password\": \"zacharylpass\"\n        },\n        {\n            \"id\": 188,\n            \"username\": \"ariamx\",\n            \"password\": \"ariamxpass\"\n        },\n        {\n            \"id\": 189,\n            \"username\": \"tristans\",\n            \"password\": \"tristanspass\"\n        },\n        {\n            \"id\": 190,\n            \"username\": \"leahw\",\n            \"password\": \"leahwpass\"\n        },\n        {\n            \"id\": 191,\n            \"username\": \"laylab\",\n            \"password\": \"laylabpass\"\n        },\n        {\n            \"id\": 192,\n            \"username\": \"nolang\",\n            \"password\": \"nolangpass\"\n        },\n        {\n            \"id\": 193,\n            \"username\": \"hazelc\",\n            \"password\": \"hazelcpass\"\n        },\n        {\n            \"id\": 194,\n            \"username\": \"braydenh\",\n            \"password\": \"braydenhpass\"\n        },\n        {\n            \"id\": 195,\n            \"username\": \"violeta\",\n            \"password\": \"violetapass\"\n        },\n        {\n            \"id\": 196,\n            \"username\": \"lucasr\",\n            \"password\": \"lucasrpass\"\n        },\n        {\n            \"id\": 197,\n            \"username\": \"eleanorw\",\n            \"password\": \"eleanorwpass\"\n        },\n        {\n            \"id\": 198,\n            \"username\": \"maxp\",\n            \"password\": \"maxppass\"\n        },\n        {\n            \"id\": 199,\n            \"username\": \"viviang\",\n            \"password\": \"viviangpass\"\n        },\n        {\n            \"id\": 200,\n            \"username\": \"adrianf\",\n            \"password\": \"adrianfpass\"\n        },\n        {\n            \"id\": 201,\n            \"username\": \"mayah\",\n            \"password\": \"mayahpass\"\n        },\n        {\n            \"id\": 202,\n            \"username\": \"calebn\",\n            \"password\": \"calebnpass\"\n        },\n        {\n            \"id\": 203,\n            \"username\": \"novab\",\n            \"password\": \"novabpass\"\n        },\n        {\n            \"id\": 204,\n            \"username\": \"mateop\",\n            \"password\": \"mateoppass\"\n        },\n        {\n            \"id\": 205,\n            \"username\": \"aubreyg\",\n            \"password\": \"aubreygpass\"\n        },\n        {\n            \"id\": 206,\n            \"username\": \"elenab\",\n            \"password\": \"elenabpass\"\n        },\n        {\n            \"id\": 207,\n            \"username\": \"jaces\",\n            \"password\": \"jacespass\"\n        },\n        {\n            \"id\": 208,\n            \"username\": \"samanthal\",\n            \"password\": \"samanthalpass\"\n        }\n    ],\n    \"total\": 208,\n    \"skip\": 0,\n    \"limit\": 208\n}"
+						}
+					]
+				},
+				{
+					"name": "Login user and get tokens",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"username\": \"emilys\",\r\n    \"password\": \"emilyspass\",\r\n    \"expiresInMins\": 30 // optional, defaults to 60\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dummyjson.com/user/login",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get current authenticated user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/user/me",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a single user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/users/1",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/users/search?q=John",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"users",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "John"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/users/filter?key=hair.color&value=Brown",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"users",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "hair.color"
+								},
+								{
+									"key": "value",
+									"value": "Brown"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Limit and skip users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/users?limit=5&skip=10&select=firstName,age",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "skip",
+									"value": "10"
+								},
+								{
+									"key": "select",
+									"value": "firstName,age"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sort users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/users?sortBy=firstName&order=asc",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "firstName"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user's carts by user id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/users/6/carts",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"users",
+								"6",
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user's posts by user id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/users/5/posts",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"users",
+								"5",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user's todos by user id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "limit",
+								"value": "0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://dummyjson.com/users/46/todos",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"users",
+								"46",
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a new user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Sandra\",\r\n    \"lastName\": \"Stone\",\r\n    \"age\": 33\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dummyjson.com/users/add",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"users",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a user",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lastName\": \"Owais\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dummyjson.com/users/2",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/users/1",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Get all posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/posts",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a single post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/posts/1",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/posts/search?q=love",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"posts",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "love"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Limit and skip posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/posts?limit=10&skip=10&select=title,reactions,userId",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "skip",
+									"value": "10"
+								},
+								{
+									"key": "select",
+									"value": "title,reactions,userId"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sort posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/posts?sortBy=title&order=asc",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "title"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all posts tags",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/posts/tags",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"posts",
+								"tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get posts tag list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/posts/tag-list",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"posts",
+								"tag-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get posts by a tag",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/posts/tag/life",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"posts",
+								"tag",
+								"life"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all posts by user id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/posts/user/5",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"posts",
+								"user",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get post's comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/posts/1/comments",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"posts",
+								"1",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a new post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"I am in love with someone.\",\r\n    \"userId\": 5\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dummyjson.com/posts/add",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"posts",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a post",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"I think I should shift to the moon\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dummyjson.com/posts/1",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/posts/1",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "Get all comments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//patikrina, kiek komentarų turi Post, kurio id=46\r",
+									"\r",
+									"pm.test(\"Verify the number of comments for post with id=4\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"\r",
+									"    const commentsForPost4 = responseJson.comments.filter(comment => comment.postId === 4);\r",
+									"\r",
+									"    pm.expect(commentsForPost4.length).to.be.greaterThan(0);\r",
+									"    console.log(`Number of comments for post id=4: ${commentsForPost4.length}`);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/comments?limit=0",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"comments"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a single comment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/comments/1",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Limit and skip comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/comments?limit=10&skip=10&select=body,postId",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"comments"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "skip",
+									"value": "10"
+								},
+								{
+									"key": "select",
+									"value": "body,postId"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all comments by post id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/comments/post/6",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"comments",
+								"post",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a new comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"body\": \"This makes all sense to me!\",\r\n    \"postId\": 3,\r\n    \"userId\": 5\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dummyjson.com/comments/add",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"comments",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a comment",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"body\": \"I think I should shift to the moon\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dummyjson.com/comments/1",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a comment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/comments/1",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Todos",
+			"item": [
+				{
+					"name": "Get all todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/todos?limit=0",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"todos"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a single todo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/todos/1",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"todos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a random todo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/todos/random",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"todos",
+								"random"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Limit and skip todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/todos?limit=3&skip=10",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"todos"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "3"
+								},
+								{
+									"key": "skip",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all todos by user id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/todos/user/5",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"todos",
+								"user",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a new todo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"todo\": \"Use DummyJSON in the project\",\r\n    \"completed\": false,\r\n    \"userId\": 5\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dummyjson.com/todos/add",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"todos",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a todo",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"completed\": false\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dummyjson.com/todos/1",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"todos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a todo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/todos/1",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"todos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quotes",
+			"item": [
+				{
+					"name": "Get all quotes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/quotes",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"quotes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a single quote",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/quotes/1",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"quotes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a random quote",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/quotes/random",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"quotes",
+								"random"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Limit and skip quotes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/quotes?limit=3&skip=10",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"quotes"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "3"
+								},
+								{
+									"key": "skip",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"// Patikrinti kiekvieno request status kodą\r",
+					"pm.test(\"Status code is 2xx\", function () {\r",
+					"    pm.expect(pm.response.code).to.be.within(200,203);\r",
+					"});\r",
+					"\r",
+					"//Patikrinti kiekvieno request formatą\r",
+					"pm.test(\"Response Content-Type includes json, webp, jpg, or png\", function () {\r",
+					"    pm.response.to.have.header(\"Content-Type\");\r",
+					"    const contentType = pm.response.headers.get(\"Content-Type\");\r",
+					"    pm.expect(contentType).to.match(/(application\\/json|image\\/webp|image\\/jpeg|image\\/png)/);\r",
+					"});\r",
+					"\r",
+					"//Patikrinti, ar kiekvienas response JSON neturi 'error elemento'\r",
+					"pm.test(\"Response JSON does not contain 'error' element\", function () {\r",
+					"    const responseJson = pm.response.json();\r",
+					"    pm.expect(responseJson).to.not.have.property(\"error\");\r",
+					"});\r",
+					"\r",
+					"\r",
+					"//environments\r",
+					"\r",
+					"pm.environment.get"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "kolekcijos_kintamasis",
+			"value": "kolekcijos_reiksmes",
+			"type": "string"
+		},
+		{
+			"key": "script_kolekcija",
+			"value": ""
+		}
+	]
+}
