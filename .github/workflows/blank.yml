@@ -32,7 +32,7 @@ jobs:
         run: npm instal newman -g
 
       - name: Running collection
-        run: newman run JsonplaceholderAPI.postman_collection.json
+        run: newman run JsonplaceholderAPI.postman_collection.json &
 
       - name: Running collection with environment
         run: newman run DummyJson.postman_collection.json -e Dummy_Environment.postman_environment.json
