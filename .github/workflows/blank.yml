@@ -35,4 +35,4 @@ jobs:
         run: newman run JsonplaceholderAPI.postman_collection.json &
 
       - name: Running collection with environment
-        run: newman run DummyJson.postman_collection.json -e Dummy_Environment.postman_environment.json
+        run: newman run DummyJSON.postman_collection.json -e Dummy_Environment.postman_environment.json
